@@ -4,174 +4,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Life</title>
-
-  <!-- Favicon -->
+  <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
-
-  <!-- Style (CSS embedded directly for GitHub Pages fix) -->
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: url('IMG_1350.jpeg') no-repeat center center/cover;
-      color: white;
-      min-height: 100vh;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: -1;
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 1rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    nav {
-      margin-top: 0.5rem;
-    }
-
-    nav a {
-      color: #00d4ff;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: white;
-    }
-
-    .content {
-      padding: 2rem;
-      background: rgba(0, 0, 0, 0.5);
-      margin: 2rem;
-      border-radius: 10px;
-    }
-
-    .content h2 {
-      color: #00d4ff;
-      margin-top: 0;
-    }
-
-    .btn {
-      background-color: #00d4ff;
-      color: black;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background-color: white;
-      color: black;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.7);
-      color: #bbb;
-    }
-
-    /* 📱 Responsive Design */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      nav a {
-        display: block;
-        margin: 0.5rem 0;
-      }
-
-      .content {
-        margin: 1rem;
-        padding: 1rem;
-      }
-    }
-  </style>
 </head>
-
 <body>
+  <div class="background"></div>
   <div class="overlay"></div>
 
+  <!-- Header -->
   <header>
     <h1>Smart Life</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#recommendations">Recommendations</a>
-      <a href="#rate">Rate Us</a>
+      <a href="#youtube">YouTube</a>
       <a href="#contact">Contact</a>
+      <a href="#rate">Rate Us</a>
+      <button id="loginBtn" class="btn-login">Login</button>
     </nav>
   </header>
 
+  <!-- About Section -->
   <section id="about" class="content">
     <h2>About Us</h2>
     <p>
-      Smart Life is a corporation devoted to making smart homes and offices.
-      We offer several bundles and can customize one for your needs—whether it’s a startup bundle, security bundle, or more.
+      Smart Life is a corporation devoted to making smart homes and offices. We offer several bundles and can customize one for your needs — whether it’s a startup bundle, security bundle, or more.
     </p>
     <p>
-      Smart Life has worked with many different companies like Egyptian Arts Group and Switch Advertising.
-      We don’t just make your workspace or home more comfortable — we bring you comfort and joy.
-      Our goal is to make the customer as comfortable and happy as possible.
+      Smart Life has worked with many different companies like Egyptian Arts Group and Switch Advertising. We don’t just make your workspace or home more comfortable — we bring you comfort and joy. Our goal is to make the customer as comfortable and happy as possible.
     </p>
   </section>
 
+  <!-- Recommendations Section -->
   <section id="recommendations" class="content">
     <h2>Recommendations</h2>
-    <p><strong>Recommendation #1:</strong> Download our Smart Life app for faster and more efficient responses.</p>
-    <p><strong>Recommendation #2:</strong> When creating a Smart Home, remember that software updates are mandatory — otherwise glitches and overheating might occur.</p>
+    <div class="card">
+      <h3>Recommendation #1</h3>
+      <p>Download our Smart Life app for faster and more efficient responses.</p>
+    </div>
+    <div class="card">
+      <h3>Recommendation #2</h3>
+      <p>When creating a Smart Home, remember that software updates are mandatory — otherwise glitches and overheating might occur.</p>
+    </div>
   </section>
 
+  <!-- YouTube Section -->
+  <section id="youtube" class="content">
+    <h2>Our YouTube Channel</h2>
+    <p>Watch Smart Life tutorials, product demos, and smart home guides.</p>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="Smart Life Video"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="content">
+    <h2>Contact Us</h2>
+    <p>
+         <a href="tel:+201002331999">0100 233 1999</a><br />
+         <a href="mailto:smart.life.www@gmail.com">smart.life.www@gmail.com</a><br />
+         <a href="https://www.instagram.com/smart_life_eg" target="_blank">@smart_life_eg</a>
+    </p>
+  </section>
+
+  <!-- Rate Section -->
   <section id="rate" class="content">
     <h2>Rate Us</h2>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWo8npgHSDKZrQiulkFFuMWYdu2FDLib6EibqaX4bnNO512Q/viewform"
        target="_blank" class="btn">Click Here to Rate Us</a>
   </section>
 
-  <section id="contact" class="content">
-    <h2>Contact Us</h2>
-    <p>
-        Phone: <a href="tel:+201002331999">0100 233 1999</a><br>
-        Email: <a href="mailto:smart.life.www@gmail.com">smart.life.www@gmail.com</a><br>
-        Instagram: <a href="https://www.instagram.com/smart_life_eg" target="_blank">@smart_life_eg</a>
-    </p>
-  </section>
-
   <footer>
     <p>© 2025 Smart Life. All rights reserved.</p>
   </footer>
 
-  <!-- GitHub Pages auto-refresh fix -->
+  <!-- Login Popup -->
+  <div id="loginPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" id="closePopup">&times;</span>
+      <h2>Login</h2>
+      <form>
+        <input type="text" placeholder="Email or Phone Number" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p>Or login with:</p>
+      <div class="social-login">
+        <button class="apple"> Apple ID</button>
+        <button class="google">Gmail</button>
+      </div>
+    </div>
+  </div>
+
   <script>
-    // This ensures the page reloads correctly on GitHub Pages after the first publish
-    if (window.location.hostname.includes("github.io") && !localStorage.getItem("gh_fix")) {
-      localStorage.setItem("gh_fix", "true");
-      window.location.reload();
-    }
+    // Popup Logic
+    const loginBtn = document.getElementById('loginBtn');
+    const popup = document.getElementById('loginPopup');
+    const closeBtn = document.getElementById('closePopup');
+
+    loginBtn.onclick = () => popup.style.display = 'flex';
+    closeBtn.onclick = () => popup.style.display = 'none';
+    window.onclick = e => { if (e.target === popup) popup.style.display = 'none'; };
   </script>
 </body>
 </html>
+
