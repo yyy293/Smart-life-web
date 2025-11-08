@@ -1,116 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart Life</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="IMG_1348.jpeg">
+
+  <style>
+    /* ===== Global Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('IMG_1350.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow-x: hidden;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    /* ===== Header ===== */
+    header {
+      text-align: center;
+      padding: 80px 20px 30px;
+      animation: fadeInDown 1.5s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3.2em;
+      color: #00eaff;
+      text-shadow: 0 0 25px #00eaff;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00eaff;
+      margin: 0 18px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 15px #00eaff;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      text-align: center;
+      padding: 50px 20px;
+      background: rgba(0, 0, 0, 0.45);
+      margin: 40px auto;
+      width: 90%;
+      max-width: 850px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0, 234, 255, 0.3);
+      animation: fadeUp 1.8s ease-in-out;
+    }
+
+    section h2 {
+      color: #00eaff;
+      margin-bottom: 20px;
+      font-size: 2em;
+      text-shadow: 0 0 10px #00eaff;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.05em;
+      opacity: 0.9;
+    }
+
+    /* ===== Buttons ===== */
+    .btn, .login-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin: 12px 10px;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(90deg, #00eaff, #009ec1);
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(0,234,255,0.3);
+    }
+
+    .btn:hover, .login-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0,234,255,0.6);
+    }
+
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,234,255,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+      font-size: 0.9em;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Login Modal ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .modal-content {
+      background: #111;
+      border: 2px solid #00eaff;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(0,234,255,0.6);
+      animation: fadeInUp 0.6s ease-in-out;
+    }
+
+    .modal-content h3 {
+      color: #00eaff;
+      margin-bottom: 20px;
+    }
+
+    .close {
+      float: right;
+      color: #ccc;
+      font-size: 1.5em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close:hover {
+      color: #00eaff;
+    }
+
+    input[type="email"], input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    .submit-btn {
+      background: #00eaff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #009ec1;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-  <div class="background"></div>
   <div class="overlay"></div>
 
-  <!-- Header -->
   <header>
     <h1>Smart Life</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#recommendations">Recommendations</a>
-      <a href="#youtube">YouTube</a>
-      <a href="#contact">Contact</a>
-      <a href="#rate">Rate Us</a>
-      <button id="loginBtn" class="btn-login">Login</button>
-    </nav>
+    <p>Building a Smarter Future — One Home at a Time</p>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="content">
+  <nav>
+    <a href="#about">About</a>
+    <a href="#youtube">YouTube</a>
+    <a href="#rate">Rate Us</a>
+    <a href="#contact">Contact</a>
+    <a href="#login" id="openLogin">Login</a>
+  </nav>
+
+  <section id="about">
     <h2>About Us</h2>
     <p>
-      Smart Life is a corporation devoted to making smart homes and offices. We offer several bundles and can customize one for your needs — whether it’s a startup bundle, security bundle, or more.
-    </p>
-    <p>
-      Smart Life has worked with many different companies like Egyptian Arts Group and Switch Advertising. We don’t just make your workspace or home more comfortable — we bring you comfort and joy. Our goal is to make the customer as comfortable and happy as possible.
+      Smart Life is a corporation devoted to making smart homes and offices.
+      We offer several bundles, such as startup and security packages — and we
+      can customize one for your needs.
+      <br><br>
+      Smart Life has worked with companies like Egyptian Arts Group and Switch Advertising.
+      We focus on delivering comfort, joy, and innovation to your space.
+      <br><br>
+      Our team also provides courses in programming, smart homes, engineering,
+      and electronic building.
     </p>
   </section>
 
-  <!-- Recommendations Section -->
-  <section id="recommendations" class="content">
-    <h2>Recommendations</h2>
-    <div class="card">
-      <h3>Recommendation #1</h3>
-      <p>Download our Smart Life app for faster and more efficient responses.</p>
-    </div>
-    <div class="card">
-      <h3>Recommendation #2</h3>
-      <p>When creating a Smart Home, remember that software updates are mandatory — otherwise glitches and overheating might occur.</p>
-    </div>
-  </section>
-
-  <!-- YouTube Section -->
-  <section id="youtube" class="content">
+  <section id="youtube">
     <h2>Our YouTube Channel</h2>
-    <p>Watch Smart Life tutorials, product demos, and smart home guides.</p>
-    <div class="video-container">
-      <iframe
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        title="Smart Life Video"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <p>Watch Smart Life tutorials, demos & smart home tips.</p>
+    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=Smart_Life_egypt-123"
+      title="Smart Life Egypt YouTube Channel" allowfullscreen></iframe>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="content">
-    <h2>Contact Us</h2>
-    <p>
-        <a href="tel:+201002331999">0100 233 1999</a><br />
-        <a href="mailto:smart.life.www@gmail.com">smart.life.www@gmail.com</a><br />
-        <a href="https://www.instagram.com/smart_life_eg" target="_blank">@smart_life_eg</a>
-    </p>
-  </section>
-
-  <!-- Rate Section -->
-  <section id="rate" class="content">
+  <section id="rate">
     <h2>Rate Us</h2>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWo8npgHSDKZrQiulkFFuMWYdu2FDLib6EibqaX4bnNO512Q/viewform"
-       target="_blank" class="btn">Click Here to Rate Us</a>
+    <p>Your opinion matters! Help us improve by rating your experience.</p>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfWo8npgHSDKZrQiulkFFuMWYdu2FDLib6EibqaX4bnNO512Q/viewform"
+      target="_blank">Rate Us Here</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Reach us anytime through your favorite platform:</p>
+    <a class="btn" href="mailto:smart.life.www@gmail.com">📧 Gmail</a>
+    <a class="btn" href="https://www.instagram.com/smart_life_eg" target="_blank">📸 Instagram</a>
+    <a class="btn" href="tel:01002331999">📞 Call Us</a>
   </section>
 
   <footer>
-    <p>© 2025 Smart Life. All rights reserved.</p>
+    <p>© 2025 Smart Life | Designed for a Smarter Future</p>
   </footer>
 
-  <!-- Login Popup -->
-  <div id="loginPopup" class="popup">
-    <div class="popup-content">
-      <span class="close" id="closePopup">&times;</span>
-      <h2>Login</h2>
-      <form>
-        <input type="text" placeholder="Email or Phone Number" required />
-        <input type="password" placeholder="Password" required />
-        <button type="submit">Login</button>
-      </form>
-      <p>Or login with:</p>
-      <div class="social-login">
-        <button class="apple"> Apple ID</button>
-        <button class="google">Gmail</button>
-      </div>
+  <!-- ===== Login Modal ===== -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" id="closeLogin">&times;</span>
+      <h3>Login to Smart Life</h3>
+      <input type="email" placeholder="Email"><br>
+      <input type="password" placeholder="Password"><br>
+      <button class="submit-btn">Login</button>
+      <p style="margin-top:10px;">Or login using:</p>
+      <a href="#" class="btn">📱 Phone</a>
+      <a href="#" class="btn">🍎 Apple ID</a>
     </div>
   </div>
 
   <script>
-    // Popup Logic
-    const loginBtn = document.getElementById('loginBtn');
-    const popup = document.getElementById('loginPopup');
-    const closeBtn = document.getElementById('closePopup');
+    const modal = document.getElementById('loginModal');
+    const openLogin = document.getElementById('openLogin');
+    const closeLogin = document.getElementById('closeLogin');
 
-    loginBtn.onclick = () => popup.style.display = 'flex';
-    closeBtn.onclick = () => popup.style.display = 'none';
-    window.onclick = e => { if (e.target === popup) popup.style.display = 'none'; };
+    openLogin.onclick = function(e) {
+      e.preventDefault();
+      modal.style.display = 'flex';
+    }
+
+    closeLogin.onclick = function() {
+      modal.style.display = 'none';
+    }
+
+    window.onclick = function(e) {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
   </script>
 </body>
 </html>
-
