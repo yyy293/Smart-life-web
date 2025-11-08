@@ -1,231 +1,208 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Life</title>
 
-  <!-- ✅ Google Site Verification -->
-  <meta name="google-site-verification" content="YOUR_CODE_HERE" />
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/jpeg" href="IMG_1348.jpeg" />
 
+  <!-- ✅ Styles -->
   <style>
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f5f8ff;
-      color: #333;
-      line-height: 1.6;
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url("IMG_1349.jpeg") no-repeat center center fixed;
+      background-size: cover;
     }
 
     header {
-      background: #0a74da;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-    }
-
-    header img {
-      height: 70px;
-      vertical-align: middle;
-    }
-
-    header h1 {
-      display: inline-block;
-      margin-left: 10px;
-      font-size: 26px;
-      vertical-align: middle;
+      background: rgba(0, 188, 212, 0.9);
+      padding: 25px 10px;
+      font-size: 1.8em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     nav {
-      background: #004fa3;
-      text-align: center;
-      padding: 10px;
+      background-color: rgba(0, 150, 200, 0.8);
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      font-weight: 500;
+      transition: opacity 0.3s;
     }
 
     nav a:hover {
-      color: #ffda79;
-    }
-
-    section {
-      padding: 40px 20px;
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #0a74da;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 10px;
-      background: #0a74da;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background: #005bb5;
-    }
-
-    iframe {
-      width: 90%;
-      max-width: 560px;
-      height: 315px;
-      border: none;
-      border-radius: 10px;
-      margin: 20px 0;
-    }
-
-    footer {
-      background: #0a74da;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #ffda79;
-      text-decoration: none;
-    }
-
-    footer a:hover {
+      opacity: 0.8;
       text-decoration: underline;
     }
 
-    .login input {
-      display: block;
-      margin: 10px auto;
-      padding: 10px;
-      width: 250px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 30px;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
 
-    .login button {
-      background: #0a74da;
+    h2 {
+      color: #00e5ff;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+    }
+
+    p, .recommendation {
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+
+    .recommendation {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: rgba(0, 150, 136, 0.3);
+      border-left: 5px solid #00bcd4;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #00bcd4;
       color: white;
-      padding: 10px 20px;
       border: none;
+      padding: 10px 20px;
       border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background 0.3s, transform 0.2s;
+      margin: 8px;
     }
 
-    .login button:hover {
-      background: #005bb5;
+    button:hover {
+      background-color: #0097a7;
+      transform: scale(1.05);
+    }
+
+    a {
+      color: #4dd0e1;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 50px;
+      background: rgba(0, 188, 212, 0.85);
+      color: white;
+      padding: 20px;
+      font-size: 0.9em;
+      letter-spacing: 0.5px;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      section {
+        margin: 20px;
+        padding: 20px;
+      }
+      header {
+        font-size: 1.5em;
+      }
     }
   </style>
 </head>
-
 <body>
+  <header>Smart Life</header>
 
-  <!-- HEADER -->
-  <header>
-    <img src="logo.png" alt="Smart Life Logo">
-    <h1>Smart Life</h1>
-  </header>
-
-  <!-- NAVIGATION -->
   <nav>
     <a href="#about">About Us</a>
     <a href="#recommendations">Recommendations</a>
-    <a href="#rate">Rate Us</a>
     <a href="#contact">Contact</a>
     <a href="#login">Login</a>
   </nav>
 
-  <!-- ABOUT US -->
   <section id="about">
     <h2>About Us</h2>
     <p>
-      Smart Life is a corporation devoted to making smart homes and offices. We have several bundles, and we can
-      customize a bundle for you or your office. Our bundles can be a startup bundle, security bundle, and more.
-      <br><br>
-      Smart Life has worked with many different companies like Egyptian Arts Group and Switch Advertising. Smart Life
-      doesn’t just make your workspace or home more comfortable — it makes you feel comfort and joy, which is our goal:
-      to make our customers feel as comfortable and happy as possible.
+      Smart Life is a corporation devoted to making smart homes and offices.
+      We have several bundles and can customize one for you or your office —
+      including startup bundles, security bundles, and more.
+    </p>
+    <p>
+      Smart Life has worked with many different companies like Egyptian Arts Group and Switch Advertising.
+      Smart Life doesn’t just make your workspace or home more comfortable — it makes you feel comfort and joy.
+      Our goal is to make every customer as happy and comfortable as possible.
     </p>
   </section>
 
-  <!-- RECOMMENDATIONS -->
   <section id="recommendations">
     <h2>Recommendations</h2>
-    <p><strong>Recommendation #1:</strong> You should consider downloading our Smart Life app for faster and more
-      efficient responses.</p>
-    <a href="#" class="btn">Smart Life App</a>
-    <p><strong>Recommendation #2:</strong> When creating a Smart Home, take into account that software updates are
-      mandatory — otherwise, glitching and overheating might occur.</p>
-  </section>
 
-  <!-- RATE US -->
-  <section id="rate">
-    <h2>Rate Us</h2>
-    <p>We’d love to hear your feedback!</p>
-    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfWo8npgHSDKZrQiulkFFuMWYdu2FDLib6EibqaX4bnNO512Q/viewform" target="_blank">Rate Us Here</a>
-  </section>
+    <div class="recommendation">
+      <strong>Recommendation #1:</strong>  
+      You should consider downloading our Smart Life app
+      for faster and more efficient responses.  
+      <br>
+      <a href="#">Smart Life App</a>
+    </div>
 
-  <!-- YOUTUBE -->
-  <section id="youtube">
-    <h2>Watch Our Video</h2>
-    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
-  </section>
+    <div class="recommendation">
+      <strong>Recommendation #2:</strong>  
+      When creating a Smart Home, keep in mind that software updates are mandatory —
+      otherwise glitching and overheating might occur.
+    </div>
 
-  <!-- LOGIN -->
-  <section id="login">
-    <h2>Login</h2>
-    <div class="login">
-      <input type="email" placeholder="Email address">
-      <input type="tel" placeholder="Phone number">
-      <button>Login with Email</button>
-      <button>Login with Phone Number</button>
-      <button>Login with Apple ID</button>
+    <div class="recommendation">
+      <strong>Rate Us:</strong>  
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWo8npgHSDKZrQiulkFFuMWYdu2FDLib6EibqaX4bnNO512Q/viewform" target="_blank">
+        Click here to leave feedback
+      </a>
+    </div>
+
+    <div class="recommendation">
+      <strong>Watch Our YouTube:</strong>  
+      <a href="https://www.youtube.com" target="_blank">Smart Life Channel</a>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>We’d love to hear from you. Connect with us:</p>
-    <a class="btn" href="mailto:smart.life.www@gmail.com" target="_blank"> Gmail</a>
-    <a class="btn" href="tel:01002331999" target="_blank"> Call Us</a>
-    <a class="btn" href="https://www.instagram.com/smart_life_eg" target="_blank"> Instagram</a>
+    <p> Phone: <a href="tel:+201002331999">0100 233 1999</a></p>
+    <p> Gmail: <a href="mailto:smart.life.www@gmail.com">smart.life.www@gmail.com</a></p>
+    <p> Instagram: <a href="https://www.instagram.com/smart_life_eg" target="_blank">@smart_life_eg</a></p>
   </section>
 
-  <!-- FOOTER -->
+  <section id="login">
+    <h2>Login</h2>
+    <button onclick="alert('Login with Email feature coming soon!')">Login with Email</button>
+    <button onclick="alert('Login with Phone Number feature coming soon!')">Login with Phone</button>
+    <button onclick="alert('Login with Apple ID feature coming soon!')">Login with Apple ID</button>
+  </section>
+
   <footer>
-    <p>© 2025 Smart Life — All rights reserved.</p>
+    © 2025 Smart Life | Designed for comfort and innovation
   </footer>
-
-  <header>
-  <img src="IMG_1346.jpeg" alt="Smart Life Logo" class="logo">
-  <h1>Smart Life</h1>
-</header>
-
 </body>
 </html>
