@@ -4,192 +4,174 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Life</title>
-  <link rel="icon" type="image/png" href="IMG_1348.jpeg" />
-  <style>
-    /* Global reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+  <!-- Style (CSS embedded directly for GitHub Pages fix) -->
+  <style>
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      color: #fff;
-      background-color: #000;
+      background: url('IMG_1350.jpeg') no-repeat center center/cover;
+      color: white;
+      min-height: 100vh;
+      position: relative;
       overflow-x: hidden;
     }
 
-    /* Parallax background */
-    .parallax {
-      background-image: url('IMG_1350.jpeg');
-      height: 100vh;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-    }
-
     .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
-    }
-
-    /* Header */
-    header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 40px;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(10px);
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
     }
 
-    header img {
-      height: 55px;
-      border-radius: 10px;
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      margin-top: 0.5rem;
     }
 
     nav a {
-      color: white;
+      color: #00d4ff;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: color 0.3s;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #00c4cc;
+      color: white;
     }
 
-    /* Main content sections */
-    section {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 100px 20px;
-      max-width: 900px;
-      margin: auto;
+    .content {
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.5);
+      margin: 2rem;
+      border-radius: 10px;
     }
 
-    h1, h2 {
-      color: #00c4cc;
-      margin-bottom: 20px;
+    .content h2 {
+      color: #00d4ff;
+      margin-top: 0;
     }
 
-    p {
-      line-height: 1.7;
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-
-    /* Buttons */
     .btn {
-      background-color: #00c4cc;
+      background-color: #00d4ff;
       color: black;
-      padding: 12px 25px;
-      border-radius: 8px;
+      padding: 10px 20px;
+      border-radius: 5px;
       text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s;
     }
 
     .btn:hover {
-      background-color: #00a3aa;
-    }
-
-    /* Contact Links */
-    .contact-links a {
-      display: block;
-      color: #00c4cc;
-      font-weight: bold;
-      margin: 8px 0;
-      text-decoration: none;
-    }
-
-    .contact-links a:hover {
-      text-decoration: underline;
+      background-color: white;
+      color: black;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      background: rgba(0,0,0,0.9);
-      font-size: 14px;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      color: #bbb;
+    }
+
+    /* 📱 Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      .content {
+        margin: 1rem;
+        padding: 1rem;
+      }
     }
   </style>
 </head>
-<body>
-  <!-- Background -->
-  <div class="parallax">
-    <div class="overlay"></div>
-  </div>
 
-  <!-- Header -->
+<body>
+  <div class="overlay"></div>
+
   <header>
-    <img src="IMG_1346.jpeg" alt="Smart Life Logo">
+    <h1>Smart Life</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#recommendations">Recommendations</a>
-      <a href="#contact">Contact</a>
       <a href="#rate">Rate Us</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- About Us -->
-  <section id="about">
-    <h1>About Smart Life</h1>
+  <section id="about" class="content">
+    <h2>About Us</h2>
     <p>
       Smart Life is a corporation devoted to making smart homes and offices.
-      We have several bundles, and we can customize one for you or your office.
-      Our bundles can be startup, security, and more.
+      We offer several bundles and can customize one for your needs—whether it’s a startup bundle, security bundle, or more.
     </p>
     <p>
       Smart Life has worked with many different companies like Egyptian Arts Group and Switch Advertising.
-      Smart Life doesn’t just make your workspace or home more comfortable —
-      it makes you feel comfort and joy, which is our goal:
-      to make the customer as comfortable and happy as possible.
+      We don’t just make your workspace or home more comfortable — we bring you comfort and joy.
+      Our goal is to make the customer as comfortable and happy as possible.
     </p>
   </section>
 
-  <!-- Recommendations -->
-  <section id="recommendations">
+  <section id="recommendations" class="content">
     <h2>Recommendations</h2>
-    <p><strong>Recommendation #1:</strong> You should consider downloading our Smart Life app for faster and more efficient responses.</p>
-    <a class="btn" href="https://msha.ke/smart.life.eg" target="_blank">Smart Life App</a>
-    <br><br>
-    <p><strong>Recommendation #2:</strong> When creating a Smart Home, take into account that software updates are mandatory — otherwise glitching and overheating might occur.</p>
+    <p><strong>Recommendation #1:</strong> Download our Smart Life app for faster and more efficient responses.</p>
+    <p><strong>Recommendation #2:</strong> When creating a Smart Home, remember that software updates are mandatory — otherwise glitches and overheating might occur.</p>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact-links">
-      <a href="mailto:smart.life.www@gmail.com"> Gmail: smart.life.www@gmail.com</a>
-      <a href="tel:01002331999"> Phone: 01002331999</a>
-      <a href="https://www.instagram.com/smart_life_eg" target="_blank"> Instagram: @smart_life_eg</a>
-    </div>
-  </section>
-
-  <!-- Rate Us -->
-  <section id="rate">
+  <section id="rate" class="content">
     <h2>Rate Us</h2>
-    <p>We’d love to hear your feedback!</p>
-    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfWo8npgHSDKZrQiulkFFuMWYdu2FDLib6EibqaX4bnNO512Q/viewform" target="_blank">Rate Us Form</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWo8npgHSDKZrQiulkFFuMWYdu2FDLib6EibqaX4bnNO512Q/viewform"
+       target="_blank" class="btn">Click Here to Rate Us</a>
   </section>
 
-  <!-- Footer -->
+  <section id="contact" class="content">
+    <h2>Contact Us</h2>
+    <p>
+        Phone: <a href="tel:+201002331999">0100 233 1999</a><br>
+        Email: <a href="mailto:smart.life.www@gmail.com">smart.life.www@gmail.com</a><br>
+        Instagram: <a href="https://www.instagram.com/smart_life_eg" target="_blank">@smart_life_eg</a>
+    </p>
+  </section>
+
   <footer>
-    © 2025 Smart Life — All Rights Reserved.
+    <p>© 2025 Smart Life. All rights reserved.</p>
   </footer>
+
+  <!-- GitHub Pages auto-refresh fix -->
+  <script>
+    // This ensures the page reloads correctly on GitHub Pages after the first publish
+    if (window.location.hostname.includes("github.io") && !localStorage.getItem("gh_fix")) {
+      localStorage.setItem("gh_fix", "true");
+      window.location.reload();
+    }
+  </script>
 </body>
 </html>
