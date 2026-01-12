@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Prize</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Your <span>Prize</span></h1>
+</header>
+
+<section>
+  <h2 id="prize"></h2>
+</section>
+
+<script>
+const prizes = [
+  "☁️ Cloud Roof",
+  "💡 Smart Switch",
+  "🔌 Smart Plug",
+  "🗣️ Alexa",
+  "🏠 Any Smart Device"
+];
+
+document.getElementById("prize").innerText =
+  prizes[Math.floor(Math.random() * prizes.length)];
+</script>
+
+</body>
+</html>
