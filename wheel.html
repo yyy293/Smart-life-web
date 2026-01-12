@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Spin & Win</title>
+<link rel="stylesheet" href="style.css">
+<style>
+#wheel {
+  width: 280px;
+  height: 280px;
+  margin: 30px auto;
+  border-radius: 50%;
+  border: 8px solid #00bcd4;
+  background: conic-gradient(
+    #4caf50 0deg 60deg,
+    #f44336 60deg 120deg,
+    #4caf50 120deg 180deg,
+    #f44336 180deg 240deg,
+    #f44336 240deg 300deg,
+    #f44336 300deg 360deg
+  );
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Spin & <span>Win</span></h1>
+</header>
+
+<section>
+  <div id="wheel"></div>
+  <button class="btn" onclick="spin()">Spin the Wheel</button>
+  <p id="result"></p>
+  <a id="prizeLink" href="prizes.html" style="display:none;">🎁 Go to Prizes</a>
+</section>
+
+<script>
+function spin(){
+  const win = Math.random() < 2/6;
+
+  if(win){
+    document.getElementById("result").innerText = "🎉 You Win!";
+    document.getElementById("prizeLink").style.display = "block";
+  } else {
+    document.getElementById("result").innerText = "❌ Sorry, try again.";
+  }
+}
+</script>
+
+</body>
+</html>
